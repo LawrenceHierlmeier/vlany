@@ -2,7 +2,6 @@
 
 # errors and fatal risks
 [ $(uname) != "Linux" ] && { echo "Not on a Linux system. Exiting."; exit; } # i plan on adding support for OS X once everything else it dealt with
-[ $(id -u) != 0 ] && { echo "Not root. Exiting."; exit; }
 if [ -f /etc/selinux/config ]; then
     echo "SELinux config found on system. Checking SELinux status."
     if [[ $(cat /etc/selinux/config | grep "SELINUX=" | tail -n 1) == *"enforcing"* ]]; then
